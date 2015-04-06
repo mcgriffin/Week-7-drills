@@ -1,0 +1,110 @@
+/*****************************************************************************
+  McFly-Hoverboards
+******************************************************************************/
+
+
+@import '../../bower_components/bourbon/dist/_bourbon.scss';
+
+$visual-grid: true;
+$grid-columns: 12;
+
+@import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+$phone: new-breakpoint(min-width 0px max-width 399px);
+$tablet: new-breakpoint(min-width 400px max-width 1079px);
+$computer: new-breakpoint(min-width 1080px);
+
+
+
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+img {
+	width: 100%;
+}
+
+body {
+	font-family: "Garamond", "Times New Roman", "serif";
+	font-size: 16px;
+}
+
+nav {
+	padding: 0px;
+	margin: 0px;
+}
+
+ul {
+	padding: 0px;
+}
+
+li {
+	padding: 0.1875em;
+	/* 3px / 16px = 0.1875em */
+	color: black;
+	list-style-type: none;
+	display: inline-block;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+a:hover, a:active {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+header,
+nav,
+main,
+footer {
+	@include outer-container;
+}
+
+.product {
+	@include media($tablet) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+
+	@include media($computer) {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+}
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+header {
+	padding: 0px;
+}
+
+nav {
+	background-color: black;
+}
+
+.intro {
+	display: none;
+}
+
+.site-title {
+	display: none;
+}
+
+.product-description {
+	text-align: justify;
+}
+
+.footer-nameplate {
+	text-align: center;
+}
+
